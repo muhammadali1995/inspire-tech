@@ -1,0 +1,11 @@
+<div class="user-wrapper">
+    <div class="title">
+      <h4 class="name">{{user.name}}</h4>
+      <button class="btn" routerLink="edit/{{user.id}}">Edit</button>
+    </div>
+    <div class="details">
+        <p>Email: {{user.email}}</p>
+        <p>Phone: {{user.phone}}</p>
+        <p>Company: {{user.company.name}}</p>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="banner">
+  <h3 class="title">Update Restaurant</h3>
+</div>
+<div class="container">
+  <div class="card mt-5 p-3">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" class="form-control" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" class="form-control" formControlName="username"/>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" class="form-control" formControlName="email"/>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" class="form-control" formControlName="phone"/>
+      </div>
+
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input id="website" type="text" class="form-control" formControlName="website"/>
+      </div>
+
+      <div class="form-group">
+        <div id="address" formGroupName="address">
+          <label for="address">Address</label>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input id="street" type="text" name="street" formControlName="street">
+          </div>
+
+          <div class="form-group">
+            <label for="suite">Suite</label>
+            <input id="suite" type="text" name="suite" formControlName="suite">
+          </div>
+
+          <div class="form-group">
+            <label for="suite">City</label>
+            <input id="city" type="text" name="city" formControlName="city">
+          </div>
+
+          <div class="form-group">
+            <label for="zipcode">Zipcode</label>
+            <input id="zipcode" type="text" name="zipcode" formControlName="zipcode">
+          </div>
+          <div id="geo" formGroupName="geo">
+            <div class="form-group">
+              <label for="lat">Lat</label>
+              <input id="lat" type="number" name="lat" formControlName="lat">
+            </div>
+            <div class="form-group">
+              <label for="lng">Lng</label>
+              <input id="lng" type="number" name="lng" formControlName="lng">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div id="company" formGroupName="company">
+          <label for="address">Company</label>
+          <div class="form-group">
+            <label for="company-name">Name</label>
+            <input id="company-name" type="text" name="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="catchPhrase">Catch Phrase</label>
+            <input id="catchPhrase" type="text" name="catchPhrase" formControlName="catchPhrase">
+          </div>
+
+          <div class="form-group">
+            <label for="bs">BS</label>
+            <input id="bs" type="text" name="bs" formControlName="bs">
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutters justify-content-end">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+        <button class="btn btn-primary ml-3" type="submit" [disabled]="form.invalid ||submitting">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
